@@ -1,23 +1,31 @@
 import { View, Text, StyleSheet, TextInput } from 'react-native'
+import Product from '@/components/order/Product'
 import React from 'react'
 
 const index = () => {
   return (
     <View>
-      <View>
+      <View style={styles.container}>
         {/* Navbar */}
         {/* Display Categories */}
         <View style={styles.categoryCardContainer}>All Menu</View>
         <View style={styles.categoryCardContainer}>Dessert</View>
         <View style={styles.categoryCardContainer}>Cocktails</View>
 
-        {/* Search Bar */}
-        <TextInput
-          style={styles.searchBar}
-          placeholder="Search for something...🍕"
-        />
       </View>
-      <View></View>
+      {/* Search Bar */}
+      <TextInput
+        style={styles.searchBar}
+        placeholder="Search for something...🍕"
+      />
+      <View style={styles.container}>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+        <Product/>
+      </View>
       <View></View>
     </View>
   )
@@ -43,5 +51,10 @@ const styles = StyleSheet.create({
     height: 40,
     padding: 5,
     width: 500,
+  },
+  container: {
+    display: 'flex' ,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   }
 })
